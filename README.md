@@ -1,5 +1,5 @@
 # SARS-Cov-2-Variant-selection
-Visual tool to identify a SARS-CoV-2 variant selection
+Visual tool to identify a SARS-CoV-2 variant selection using data from John Hopkins University
 
 ## Output Exemple
 
