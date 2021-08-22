@@ -1,6 +1,11 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
 df = pd.read_csv('covid-variants.csv')
 df.head()
-df.dropna()
+df = df = df[df['num_sequences'].notna()]
 
 country = input('Select Country: ')
 
@@ -24,7 +29,8 @@ plt.figure(figsize = (10,10))
 axe = plt.subplot()
 for x in liste_var:
     
-    axe.plot(d[x].sort_values('date')['date'],d[x].sort_values('date')['num_sequences'],'o-', label = str(x))
-plt.legend()
-plt.title('Evolution of SARS-CoV-2 Variants')
+    axe.bar(d[x].sort_values('date')['date'],d[x].sort_values('date')['perc_sequences'], label = str(x), alpha = 0.8)
+plt.legend(loc = (1.1,0.3))
+plt.title('Evolution of SARS-CoV-2 Variants in '+ str(country), fontsize = 20)
 plt.xticks(rotation=89)
+plt.ylabel('Proportion of Variants (%)', fontsize = 18)
