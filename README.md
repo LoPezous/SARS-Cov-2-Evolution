@@ -1,6 +1,10 @@
 # SARS-Cov-2-Variant-selection
 Visual tool to identify a SARS-CoV-2 variant selection using data from John Hopkins University
 
-## Output Exemple
+## Output Exemple 1
 
 ![alt text](USA-Delta.jpg?raw=true "Output exemple")
+
+## Output Exemple 2
+
+![alt text](evolution_variant_france.jpg?raw=true "Output exemple")
