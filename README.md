@@ -7,4 +7,4 @@ Visual tool to identify a SARS-CoV-2 variant selection using data from John Hopk
 
 ## Output Exemple 2
 
-![alt text](evolution_variant_france.jpg?raw=true "Output exemple")
+![alt text](evolution_variants_france.jpg?raw=true "Output exemple")
