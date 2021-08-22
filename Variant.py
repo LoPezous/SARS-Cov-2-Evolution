@@ -26,7 +26,9 @@ dfdelta = df[df['variant']==variant]
 dfdeltaus = dfdelta[dfdelta['location']=='United States']
 dfdeltaus = dfdeltaus.sort_values('date')
 
-#VISUALIZATION
+
+
+
 
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
@@ -45,7 +47,7 @@ ax1.plot(x,y,'-', alpha = 1, color = 'g')
 
 #Plot 2 (Delta)
 x2 = dfdeltaus['date']
-y2 = dfdeltaus['num_sequences']
+y2 = dfdeltaus['perc_sequences']
 ax2.plot(x2,y2,'-', alpha = 1, color = 'purple')
 
 
@@ -62,18 +64,18 @@ ax2.fill_between(x2,y2,alpha = 0.25, color = 'purple')
 
 
 #Correlation between Diversity and delta growth after first occurence of delta and before artifact drop in delta
-data1 = df2[(df2['date'] > '2021-04-05') & (df2['date'] < '2021-07-26')]
+data1 = df2[(df2['date'] > list(dfdeltaus[dfdeltaus['num_sequences'] > 10]['date'])[0]) & (df2['date'] < '2021-07-26')]
 data1 = data1['variant']
 
-data2 = dfdeltaus[(dfdeltaus['date'] > '2021-04-05') & (dfdeltaus['date'] <'2021-07-26')]
-data2 = data2['num_sequences']
+data2 = dfdeltaus[(dfdeltaus['date'] > list(dfdeltaus[dfdeltaus['num_sequences'] > 10]['date'])[0]) & (dfdeltaus['date'] <'2021-07-26')]
+data2 = data2['perc_sequences']
 
-corr, _ = spearmanr(data1, data2)
+corr, _ = spearmanr(data1, np.log(data2))
 
 #Text
 ax2.set_xlabel('Sample dates', fontsize = 22)
 ax1.set_ylabel('Variant diversity', fontsize = 22)
-ax2.set_ylabel('Number of '+ str(variant)+' variant identified', fontsize = 22)
+ax2.set_ylabel('Percentage of '+ str(variant)+' Variant in Samples', fontsize = 22)
 ax1.set_title('SARS-CoV-2 Variant Diversity Compared To '+ str(variant)+ ' Variant Growth '+'('+str(country)+')', fontsize = 25)
 ax1.legend(fontsize = 18)
 
