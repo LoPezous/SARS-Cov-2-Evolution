@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+#DATA MANIP
 
 df = pd.read_csv('covid-variants.csv')
 df.head()
@@ -21,9 +22,15 @@ liste_var = []
 for x in dfvar['variant']:
     if x not in liste_var:
         liste_var.append(x)
+        
+#Generate a dataframe variable for each variant
+
 d = {}
 for i in liste_var:
     d["{}".format(i)] = df[df['variant']==str(i)]
+    
+    
+#PLOTTING
     
 plt.figure(figsize = (10,10))
 axe = plt.subplot()
