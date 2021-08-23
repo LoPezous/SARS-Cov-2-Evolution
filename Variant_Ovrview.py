@@ -37,6 +37,7 @@ axe = plt.subplot()
 for x in liste_var:
     
     axe.bar(d[x].sort_values('date')['date'],d[x].sort_values('date')['perc_sequences'], label = str(x), alpha = 0.8)
+    
 plt.legend(loc = (1.1,0.3))
 plt.title('Evolution of SARS-CoV-2 Variants in '+ str(country), fontsize = 20)
 plt.xticks(rotation=89)
