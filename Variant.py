@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+
+#USER INPUT
 country = input('Select Country: ')
 variant = input('Select Variant: ')
 
@@ -27,7 +29,7 @@ dfdeltaus = dfdelta[dfdelta['location']=='United States']
 dfdeltaus = dfdeltaus.sort_values('date')
 
 
-
+#VISUALIZATION
 
 
 import matplotlib.pyplot as plt
