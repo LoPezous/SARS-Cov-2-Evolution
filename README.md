@@ -1,5 +1,5 @@
 # SARS-Cov-2-Variant-selection
-Visual tool to identify a SARS-CoV-2 variant selection using data from John Hopkins University
+Visual tool to identify SARS-CoV-2 variants selection using data from John Hopkins University
 
 ## Key Points
 * Comparison of SARS-CoV-2 Variant diveristy with a given Variant's abundance across time
